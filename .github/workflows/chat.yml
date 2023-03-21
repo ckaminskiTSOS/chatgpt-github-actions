@@ -8,13 +8,12 @@ jobs:
     name: ChatGPT explain code # Job name
     steps:
       - name: Code Review with ChatGPT # Step name
-        runs:
-          uses: 'docker' # Use the ChatGPT Github Actions from cirolini repository
-          image: 'Dockerfile'
-          args:
-            openai_api_key: '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' # Get the OpenAI API key from repository secrets
-            github_token: ${{ secrets.GITHUB_TOKEN }} # Get the Github Token from repository secrets
-            github_pr_id: ${{ github.event.number }} # Get the Github Pull Request ID from the Github event
-            openai_engine: "text-davinci-002" # Optional: specify the OpenAI engine to use. Default is "text-davinci-002"
-            openai_temperature: 0.5 # Optional: specify the sampling temperature for OpenAI. Default is 0.5
-            openai_max_tokens: 2048 # Optional: specify the maximum number of tokens to generate in OpenAI completion. Default is 2048
+        uses: 'docker' # Use the ChatGPT Github Actions from cirolini repository
+        image: 'Dockerfile'
+        args:
+          openai_api_key: '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' # Get the OpenAI API key from repository secrets
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Get the Github Token from repository secrets
+          github_pr_id: ${{ github.event.number }} # Get the Github Pull Request ID from the Github event
+          openai_engine: "text-davinci-002" # Optional: specify the OpenAI engine to use. Default is "text-davinci-002"
+          openai_temperature: 0.5 # Optional: specify the sampling temperature for OpenAI. Default is 0.5
+          openai_max_tokens: 2048 # Optional: specify the maximum number of tokens to generate in OpenAI completion. Default is 2048
