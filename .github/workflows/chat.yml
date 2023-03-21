@@ -8,7 +8,7 @@ jobs:
     name: ChatGPT explain code # Job name
     steps:
       - name: Code Review with ChatGPT # Step name
-        uses: 'docker' # Use the ChatGPT Github Actions from cirolini repository
+        using: 'docker' # Use the ChatGPT Github Actions from cirolini repository
         image: 'Dockerfile'
         args:
           openai_api_key: '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' # Get the OpenAI API key from repository secrets
